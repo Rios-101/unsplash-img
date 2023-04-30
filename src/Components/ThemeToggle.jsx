@@ -20,7 +20,7 @@ const ThemeToggle = ()=>{
 
     return(
         <section className="toggle-container">
-            <button className="dark-toggle" onClick={()=>toggleTheme()}>{isDarkTheme ? (<i className="fas fa-moon toggle-icon"></i>) : (<i style={{color: '#fff'}} className="far fa-sun toggle-icon"></i>)}</button>
+            <button className="dark-toggle" onClick={()=>toggleTheme()}>{isDarkTheme ? (<i style={{color: '#fff'}}  className="fas fa-moon toggle-icon"></i>) : (<i className="far fa-sun toggle-icon"></i>)}</button>
         </section>
         
         

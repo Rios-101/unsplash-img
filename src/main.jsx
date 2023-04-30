@@ -1,11 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { AppProvider } from './Context';
-import './index.css';
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { AppProvider } from "./Context";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-<AppProvider>
-    <App />
-</AppProvider>
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <AppProvider>
+    <QueryClientProvider client={queryClient}>
+      <App />
+      <ReactQueryDevtools initialIsOpen={true} />
+    </QueryClientProvider>
+  </AppProvider>
 );
